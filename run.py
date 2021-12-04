@@ -89,14 +89,13 @@ def scrape():
         for i in followers:
             if i.get_attribute('href'):
                 users.add(i.get_attribute('href').split("/")[3])
+                with open('followers.txt', 'a') as file:
+                    file.write('\n'.join(users) + "\n")
             else:
                 continue
 
     print('[Info] - Saving...')
     print('[DONE] - Your followers are saved in followers.txt file!')
-
-    with open('followers.txt', 'a') as file:
-        file.write('\n'.join(users) + "\n")
 
 
 if __name__ == '__main__':
