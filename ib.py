@@ -4,7 +4,7 @@ bot = Bot()
 
 bot.login(username="cohoxe9464",password="KashiJee786143")
 
-followers = bot.get_user_followers("affirmationsandquotes")
+followers = bot.get_user_followers("affirmationsandquotes",100)
 
-for id in followers:
-    print(id)
+with open('followers.txt', 'a') as file:
+    file.write('\n'.join(followers) + "\n")
