@@ -2,10 +2,11 @@ from instabot import Bot
 
 bot = Bot()
 
-bot.login(username="cohoxe9464",password="KashiJee786143")
+bot.login(username="xeyov61622",password="I have12")
 
-followers = bot.get_user_followers("affirmationsandquotes")
+followers = bot.get_user_followers("poetalia1")
 
-for id in followers:
-    username=bot.get_username_from_user_id(id)
-    print(username)
+with open("get_followers.txt", "a") as f:
+    for i in followers:
+        print(i)
+        f.write(str(bot.get_username_from_user_id(i)) +"\n")
